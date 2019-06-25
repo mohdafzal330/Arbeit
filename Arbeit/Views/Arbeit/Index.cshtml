@@ -1,0 +1,276 @@
+﻿
+@{
+    ViewBag.Title = "Arbeit Admin";
+}
+
+<div>
+
+    <br />
+    <div class="container-fluid">
+        <!--Dahsboard Class-->
+        <div class="row">
+              <div class="col-md-6 col-sm-6 cp-xs-12 text-center">
+                  <h2 class="text-primary" style="font-family:DejaVu Sans">Arbeit Admin Dashboard</h2>
+              </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="text-center">
+                    <a href="" style="float:right" class="btn btn-primary btn-md btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">
+                        + Create New Company
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-sm-1 col-xs-12"></div>
+            <div class="col-md-10 col-sm-10 col-xs-12">
+                <!-- Table with panel -->
+                <div class="card card-cascade narrower">
+
+                    <!--Card image-->
+                    <div class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+
+                        <div>
+                            <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+                                <i class="fas fa-th-large mt-0"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+                                <i class="fas fa-columns mt-0"></i>
+                            </button>
+                        </div>
+
+                        <a href="" class="white-text mx-3">Registered Companies with Arbeit</a>
+
+                        <div>
+                            <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+                                <i class="fas fa-pencil-alt mt-0"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+                                <i class="far fa-trash-alt mt-0"></i>
+                            </button>
+                            <button type="button" class="btn btn-outline-white btn-rounded btn-sm px-2">
+                                <i class="fas fa-info-circle mt-0"></i>
+                            </button>
+                        </div>
+
+                    </div>
+                    <!--/Card image-->
+
+                    <div class="px-4">
+
+                        <div class="table-wrapper">
+                            <!--Table-->
+                            <table class="table table-hover mb-0">
+
+                                <!--Table head-->
+                                <thead>
+                                    <tr>
+                                        <th class="th-lg">
+                                            <a>
+                                                Company Name
+                                                <i class="fas fa-sort ml-1"></i>
+                                            </a>
+                                        </th>
+                                        <th class="th-lg">
+                                            <a href="">
+                                                Users
+                                                <i class="fas fa-sort ml-1"></i>
+                                            </a>
+                                        </th>
+                                        <th class="th-lg">
+                                            <a href="">
+                                                Boards
+                                                <i class="fas fa-sort ml-1"></i>
+                                            </a>
+                                        </th>
+                                        <th class="th-lg">
+                                            <a href="">
+                                                Registration Date
+                                                <i class="fas fa-sort ml-1"></i>
+                                            </a>
+                                        </th>
+                                        <th class="th-lg">
+                                            <a href="">
+                                                Action
+                                                <i class="fas fa-sort ml-1"></i>
+                                            </a>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <!--Table head-->
+                                <!--Table body-->
+                                <tbody>
+                                    <tr>
+                                        <th>Mark</th>
+                                        <td>152/500</td>
+                                        <td>32/100</td>
+                                        <td>23/06/2019</td>
+                                        <td>
+                                            <a class="btn btn-success btn-sm" href="@Url.Action("profile","Companies", new { id=1 })">
+                                                <i class="fas fa-info"></i>
+                                            </a>
+                                            @*@Html.ActionLink("Details", "profile", "Companies", null, new { @class = "btn btn-sm btn-success" })*@
+                                            <a class="btn btn-primary btn-sm" href="@Url.Action("Edit","Compnaies")">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </a>
+                                            <a class="btn btn-danger btn-sm" href="@Url.Action("Delete","Compnaies")">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                            @*@Html.ActionLink("Edit", "Details", "Companies", new {id=1 }, new { @class="btn btn-sm btn-primary" } )*@
+                                            @*@Html.ActionLink("Delete", "Details", "Companies", null, new { @class="btn btn-sm btn-danger" } )*@
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Mark</th>
+                                        <td>152/500</td>
+                                        <td>32/100</td>
+                                        <td>23/06/2019</td>
+                                        <td>
+                                            <a class="btn btn-success btn-sm" href="@Url.Action("profile","Companies", new { id=1 })">
+                                                <i class="fas fa-info"></i>
+                                            </a>
+                                            @*@Html.ActionLink("Details", "profile", "Companies", null, new { @class = "btn btn-sm btn-success" })*@
+                                            <a class="btn btn-primary btn-sm" href="@Url.Action("Edit","Compnaies")">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </a>
+                                            <a class="btn btn-danger btn-sm" href="@Url.Action("Delete","Compnaies")">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                            @*@Html.ActionLink("Edit", "Details", "Companies", new {id=1 }, new { @class="btn btn-sm btn-primary" } )*@
+                                            @*@Html.ActionLink("Delete", "Details", "Companies", null, new { @class="btn btn-sm btn-danger" } )*@
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Mark</th>
+                                        <td>152/500</td>
+                                        <td>32/100</td>
+                                        <td>23/06/2019</td>
+                                        <td>
+                                            <a class="btn btn-success btn-sm" href="@Url.Action("profile","Companies", new { id=1 })">
+                                                <i class="fas fa-info"></i>
+                                            </a>
+                                            @*@Html.ActionLink("Details", "profile", "Companies", null, new { @class = "btn btn-sm btn-success" })*@
+                                            <a class="btn btn-primary btn-sm" href="@Url.Action("Edit","Compnaies")">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </a>
+                                            <a class="btn btn-danger btn-sm" href="@Url.Action("Delete","Compnaies")">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                            @*@Html.ActionLink("Edit", "Details", "Companies", new {id=1 }, new { @class="btn btn-sm btn-primary" } )*@
+                                            @*@Html.ActionLink("Delete", "Details", "Companies", null, new { @class="btn btn-sm btn-danger" } )*@
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Mark</th>
+                                        <td>152/500</td>
+                                        <td>32/100</td>
+                                        <td>23/06/2019</td>
+                                        <td>
+                                            <a class="btn btn-success btn-sm" href="@Url.Action("profile","Companies", new { id=1 })">
+                                                <i class="fas fa-info"></i>
+                                            </a>
+                                            @*@Html.ActionLink("Details", "profile", "Companies", null, new { @class = "btn btn-sm btn-success" })*@
+                                            <a class="btn btn-primary btn-sm" href="@Url.Action("Edit","Compnaies")">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </a>
+                                            <a class="btn btn-danger btn-sm" href="@Url.Action("Delete","Compnaies")">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                            @*@Html.ActionLink("Edit", "Details", "Companies", new {id=1 }, new { @class="btn btn-sm btn-primary" } )*@
+                                            @*@Html.ActionLink("Delete", "Details", "Companies", null, new { @class="btn btn-sm btn-danger" } )*@
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <th>Mark</th>
+                                        <td>152/500</td>
+                                        <td>32/100</td>
+                                        <td>23/06/2019</td>
+                                        <td>
+                                            <a class="btn btn-success btn-sm" href="@Url.Action("profile","Companies", new { id=1 })">
+                                                <i class="fas fa-info"></i>
+                                            </a>
+                                            @*@Html.ActionLink("Details", "profile", "Companies", null, new { @class = "btn btn-sm btn-success" })*@
+                                            <a class="btn btn-primary btn-sm" href="@Url.Action("Edit","Compnaies")">
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </a>
+                                            <a class="btn btn-danger btn-sm" href="@Url.Action("Delete","Compnaies")">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </a>
+                                            @*@Html.ActionLink("Edit", "Details", "Companies", new {id=1 }, new { @class="btn btn-sm btn-primary" } )*@
+                                            @*@Html.ActionLink("Delete", "Details", "Companies", null, new { @class="btn btn-sm btn-danger" } )*@
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                                <!--Table body-->
+                            </table>
+                            <!--Table-->
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- Table with panel -->
+            </div>
+            <div class="col-md-1 col-sm-1 col-xs-12"></div>
+        </div>
+    </div>
+</div>
+<br /><br />
+
+<!-- Material form contact -->
+
+<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100">Fill Details</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="md-form mb-5">
+                    <i class="fas fa-sitemap prefix grey-text"></i>
+                    <input type="text" id="name" name="name" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="name">Company Name</label>
+                </div>
+
+                <div class="md-form mb-5">
+                    <i class="fas fa-info-circle prefix grey-text"></i>
+                    <input type="text" id="description" name="description" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="description">Description/About</label>
+                </div>
+
+                <div class="md-form mb-5">
+                    <i class="fas fa-folder prefix grey-text"></i>
+                    <input type="number" id="boards" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="boards">Max No of Boards</label>
+                </div>
+
+                <div class="md-form mb-5">
+                    <i class="fas fa-user prefix grey-text"></i>
+                    <input type="number" id="users" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="users">Max No of Users</label>
+                </div>               
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button class="btn btn-primary">Add Company</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!--Dialog Forms-->
+<!--Dialog Ends-->

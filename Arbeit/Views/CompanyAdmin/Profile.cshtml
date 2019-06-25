@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Company Admin Profile";
+}
+<br />
+<div class="container jumbotron" style="font-family:DejaVu Sans">
+
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-xs-12">
+            @Html.ActionLink("Back to Home", "Index", null, new { @class = "btn btn-md btn-primary", style = "float:right" })
+        </div>
+    </div>
+    <!--Row for Profile Section-->
+    <div class="row">
+        <div class="col-md-1 col-sm-1 col-xs-12"></div>
+
+        <div class="col-md-3 col-sm-3 col-xs-12">
+            <img src="../Content/img/pro.png" alt="Profile Image" class=" img img-responsive thumbnail" />
+            <br /><br />
+            <button style="margin-left:50px;" class="btn btn-sm btn-primary up_img" onclick="up_img()">Edit Image</button>
+            <form class="up_form" style="display:none">
+                <input type="file" class="form-control btn-light" />
+                <input type="submit" name="upload" value="Upload Image" class="btn btn-md btn-success" />
+            </form>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12">
+            <h3>Name: </h3>
+            <h4>Email: </h4>
+            <h4>Role: </h4>
+            <h4>Password: </h4>
+            <h4>Contact Number: </h4>
+
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <h3 class="text-primary">Mo Abjal</h3>
+            <h4>devb@mindfiresolutions.com</h4>
+            <h4>Trainee Software Engineer</h4>
+            <h4>d54j233hjg765dsg</h4>
+            <h4>+91-9012114316</h4>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-12">
+
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-12"></div>
+    </div>
+
+
+</div>
+
+<script>
+
+    function up_img() {
+        $(".up_img").css("display", "none");
+        $(".up_form").css("display", "block");
+    }
+
+</script>

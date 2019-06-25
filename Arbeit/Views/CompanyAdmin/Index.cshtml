@@ -1,0 +1,442 @@
+﻿
+@{
+    ViewBag.Title = "Company Name, Admin";
+}
+
+<style>
+    .my-custom-scrollbar {
+        position: relative;
+        height: 300px;
+        overflow: auto;
+    }
+
+    .table-wrapper-scroll-y {
+        display: block;
+    }
+</style>
+
+<div class="container">
+    <!--Row for Head-->
+    <div class="row">
+        <div class="col-md-4 col-sm-4 col-xs- 12">
+            <h2 class="text-primary">Dashboard</h2>
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12"></div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <h4 class="text-info" style="float:right;margin-top:10px;">Mindfire Admin </h4>
+        </div>
+    </div>
+    <br />
+    <!--Row for Latest board and links-->
+    <div class="row jumbotron" >
+
+        <div class="col-md-3 col-sm-3 col-xs-12">
+
+            <a href="@Url.Action("BoardsDetails","Boards")">
+                <div class="card card-cascade">
+
+                    <!-- Card image -->
+                    <div class="view view-cascade gradient-card-header blue-gradient white-text">
+
+                        <!-- Title -->
+                        <h2 class="card-header-title mb-3" align="middle" style="margin-top:10px;">Board Title</h2>
+                        <!-- Subtitle -->
+
+                    </div>
+
+                    <!-- Card content -->
+                    <div class="card-body card-body-cascade text-center">
+
+                        <!-- Text -->
+                        <p class="card-text text-center">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, ex,
+                            recusandae. Facere modi sunt, quod quibusdam dignissimos neque rem nihil ratione est placeat vel, natus
+
+                        </p>
+                        <hr />
+                        <p class="card-header-subtitle mb-0" style="float:right;font-size:13px;color:gray">23-Jun-2019</p>
+
+                    </div>
+
+                </div>
+            </a>
+            <!-- Card -->
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12"></div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <a class="btn btn-primary " style="float:right" data-toggle="modal" data-target="#modalBoardForm">+ Create New Board</a><br />
+            <a class="btn btn-success " style="float:right" data-toggle="modal" data-target="#modalTeamForm">+ Create New Team</a>
+            <a class="btn btn-info " style="float:right" data-toggle="modal" data-target="#modalUserForm">+ Create New User</a>
+
+        </div>
+    </div>
+
+
+    <!--Row for Main Content  -->
+    <br />
+    <div class="row blue-gradient" style="min-height:100px;position:relative">
+        <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top:20px;">
+            <div class="accordion md-accordion" id="accordionEx1" role="tablist" aria-multiselectable="true">
+
+                <!-- Accordion card -->
+                <div class="card">
+                    <!-- Card header -->
+                    <div class="card-header" role="tab" id="headingTwo1">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo1"
+                           aria-expanded="false" aria-controls="collapseTwo1">
+                            @*<h5 class="mb-0">
+                                    Collapsible Group Item #1 <i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>*@
+                            <h3>
+                                <i class="fa fa-window-maximize"></i>
+                                Available Boards
+                                <i class="fas fa-angle-down rotate-icon"></i>
+                                <span style="float:right;margin-right:30px;font-size:17px;margin-top:8px;"> 32 Boards</span>
+                            </h3>
+
+                        </a>
+                    </div>
+
+                    <!-- Card body -->
+                    <div id="collapseTwo1" class="collapse" role="tabpanel" aria-labelledby="headingTwo1"
+                         data-parent="#accordionEx1">
+                        <div class="card-body">
+                            <span class="text-info">These are the boards available</span>
+                            <button class="btn btn-primary btn-md" style="float:right" data-toggle="modal" data-target="#modalBoardForm">+ Create New Board</button>
+
+                            <!-- Table with panel -->
+                            <div class="card-cascade narrower">
+
+                                <!--/Card image-->
+                                <br /><br />
+                                <div class="px-4">
+
+                                    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+                                        <table class="table table-bordered table-striped mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Board Name</th>
+                                                    <th scope="col">Total Users Working</th>
+                                                    <th scope="col">Lists/Cards/Tickets</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Trello Application</th>
+                                                    <td>154</td>
+                                                    <td>12/58/140</td>
+                                                    <td>
+                                                        @Html.ActionLink("Explore Details", "BoardDetails", "Boards", new { id = 1 }, new { @class = "btn btn-success btn-md" })
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Trello Application</th>
+                                                    <td>154</td>
+                                                    <td>12/58/140</td>
+                                                    <td>
+                                                        @Html.ActionLink("Explore Details", "BoardDetails", "Boards", new { id = 1 }, new { @class = "btn btn-success btn-md" })
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Trello Application</th>
+                                                    <td>154</td>
+                                                    <td>12/58/140</td>
+                                                    <td>
+                                                        @Html.ActionLink("Explore Details", "BoardDetails", "Boards", new { id = 1 }, new { @class = "btn btn-success btn-md" })
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Trello Application</th>
+                                                    <td>154</td>
+                                                    <td>12/58/140</td>
+                                                    <td>
+                                                        @Html.ActionLink("Explore Details", "BoardDetails", "Boards", new { id = 1 }, new { @class = "btn btn-success btn-md" })
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Trello Application</th>
+                                                    <td>154</td>
+                                                    <td>12/58/140</td>
+                                                    <td>
+                                                        @Html.ActionLink("Explore Details", "BoardDetails", "Boards", new { id = 1 }, new { @class = "btn btn-success btn-md" })
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- Table with panel -->
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Accordion card -->
+                <!-- Accordion wrapper -->
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="row blue-gradient" style="min-height:100px;position:relative">
+        <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top:20px;">
+            <div class="accordion md-accordion" id="accordionEx2" role="tablist" aria-multiselectable="true">
+
+                <!-- Accordion card -->
+                <div class="card">
+                    <!-- Card header -->
+                    <div class="card-header" role="tab" id="headingTwo1">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx2" href="#collapseTwo2"
+                           aria-expanded="false" aria-controls="collapseTwo2">
+                            @*<h5 class="mb-0">
+                                    Collapsible Group Item #1 <i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>*@
+                            <h3>
+                                <i class="fa fa-window-maximize"></i>
+                                Available Teams
+                                <i class="fas fa-angle-down rotate-icon"></i>
+                                <span style="float:right;margin-right:30px;font-size:17px;margin-top:8px;"> 62 Teams</span>
+                            </h3>
+
+                        </a>
+                    </div>
+
+                    <!-- Card body -->
+                    <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2"
+                         data-parent="#accordionEx2">
+                        <div class="card-body">
+                            <span class="text-info">These are the teams available</span>
+                            <button class="btn btn-success btn-md" style="float:right" data-toggle="modal" data-target="#modalTeamForm">+ Create New Team</button>
+
+                            <!-- Table with panel -->
+                            <div class="card-cascade narrower">
+
+                                <!--/Card image-->
+                                <br /><br />
+                                <div class="px-4">
+
+                                    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+                                        <table class="table table-bordered table-striped mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">Team Name</th>
+                                                    <th scope="col">Total Users in Team</th>
+                                                    <th scope="col">Creation Date</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Trello Application</th>
+                                                    <td>154</td>
+                                                    <td>24-Jun-2019</td>
+                                                    <td>
+                                                        @Html.ActionLink("Explore Details", "TeamDetails", "Teams", new { id = 1 }, new { @class = "btn btn-success btn-md" })
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- Table with panel -->
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Accordion card -->
+                <!-- Accordion wrapper -->
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div class="row blue-gradient" style="min-height:100px;position:relative">
+        <div class="col-md-12 col-sm-12 col-xs-12" style="margin-top:20px;">
+            <div class="accordion md-accordion" id="accordionEx3" role="tablist" aria-multiselectable="true">
+
+                <!-- Accordion card -->
+                <div class="card">
+                    <!-- Card header -->
+                    <div class="card-header" role="tab" id="headingTwo3">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx3" href="#collapseTwo3"
+                           aria-expanded="false" aria-controls="collapseTwo3">
+                            @*<h5 class="mb-0">
+                                    Collapsible Group Item #1 <i class="fas fa-angle-down rotate-icon"></i>
+                                </h5>*@
+                            <h3>
+                                <i class="fa fa-window-maximize"></i>
+                                Available Users
+                                <i class="fas fa-angle-down rotate-icon"></i>
+                                <span style="float:right;margin-right:30px;font-size:17px;margin-top:8px;"> 102 Users</span>
+                            </h3>
+
+                        </a>
+                    </div>
+
+                    <!-- Card body -->
+                    <div id="collapseTwo3" class="collapse" role="tabpanel" aria-labelledby="headingTwo3"
+                         data-parent="#accordionEx3">
+                        <div class="card-body">
+                            <span class="text-info">These are the users available</span>
+                            <button class="btn btn-info btn-md" style="float:right" data-toggle="modal" data-target="#modalUserForm">+ Create New User</button>
+
+                            <!-- Table with panel -->
+                            <div class="card-cascade narrower">
+
+                                <!--/Card image-->
+                                <br /><br />
+                                <div class="px-4">
+
+                                    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+                                        <table class="table table-bordered table-striped mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">User Name</th>
+                                                    <th scope="col">Email</th>
+                                                    <th scope="col">Registered On</th>
+                                                    <th scope="col">Action</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Dev Bhardwaj</th>
+                                                    <td>devb@mindfiresolutions.com</td>
+                                                    <td>24-Jun-2019</td>
+                                                    <td>
+                                                        @Html.ActionLink("Explore Details", "profile", "CompanyUser", new { id = 1 }, new { @class = "btn btn-success btn-md" })
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- Table with panel -->
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Accordion card -->
+                <!-- Accordion wrapper -->
+            </div>
+        </div>
+    </div>
+    <br />
+
+</div>
+
+
+
+
+<!--Model form for Board -->
+
+<div class="modal fade" id="modalBoardForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100">Fill Board Details</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="md-form mb-5">
+                    <i class="fas fa-sitemap prefix grey-text"></i>
+                    <input type="text" id="name" name="name" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="name">Board Name</label>
+                </div>
+
+                <div class="md-form mb-5">
+                    <i class="fas fa-info-circle prefix grey-text"></i>
+                    <input type="text" id="description" name="description" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="description"> Board Description/About</label>
+                </div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button class="btn btn-primary">Add Board</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Board Modal Ends-->
+<!--Model form for Team -->
+
+<div class="modal fade" id="modalTeamForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100">Fill Team Details</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="md-form mb-5">
+                    <i class="fas fa-users prefix grey-text"></i>
+                    <input type="text" id="name" name="name" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="name">Team Name</label>
+                </div>                
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button class="btn btn-primary">Add Team</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Team Modal Ends-->
+<!--Model form for User -->
+
+<div class="modal fade" id="modalUserForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100">Fill User Details</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <div class="md-form mb-5">
+                    <i class="fas fa-envelope prefix grey-text"></i>
+                    <input type="email" id="email" name="email" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="email">User Email</label>
+                </div>
+
+                <div class="md-form mb-5">
+                    <i class="fa fa-key prefix grey-text"></i>
+                    <input type="password" id="password" name="password" class="form-control validate">
+                    <label data-error="wrong" data-success="right" for="password">Password</label>
+                </div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button class="btn btn-primary">Add User</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--User Modal Ends-->

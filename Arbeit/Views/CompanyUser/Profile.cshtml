@@ -1,0 +1,174 @@
+﻿
+@{
+    ViewBag.Title = "User Profile";
+}
+<br />
+<div class="container jumbotron" style="font-family:DejaVu Sans">
+
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-xs-12">
+            @Html.ActionLink("Back to Home", "Index", "CompanyUser", null, new { @class = "btn btn-md btn-primary", style = "float:right" })
+        </div>
+    </div>
+    <!--Row for Profile Section-->
+    <div class="row">
+        <div class="col-md-1 col-sm-1 col-xs-12"></div>
+
+        <div class="col-md-3 col-sm-3 col-xs-12">
+            <img src="../Content/img/pro.png" alt="Profile Image" class=" img img-responsive thumbnail" />
+            <br /><br />
+            <button style="margin-left:50px;" class="btn btn-sm btn-primary up_img" onclick="up_img()">Edit Image</button>
+            <form class="up_form" style="display:none">
+                <input type="file" class="form-control btn-light" />
+                <input type="submit" name="upload" value="Upload Image" class="btn btn-md btn-success" />
+            </form>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12">
+            <h3>Name: </h3>
+            <h4>Email: </h4>
+            <h4>Role: </h4>
+            <h4>Password: </h4>
+            <h4>Contact Number: </h4>
+
+        </div>
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <h3 class="text-primary">Mo Abjal</h3>
+            <h4>devb@mindfiresolutions.com</h4>
+            <h4>Trainee Software Engineer</h4>
+            <h4>d54j233hjg765dsg</h4>
+            <h4>+91-9012114316</h4>
+        </div>
+        <div class="col-md-2 col-sm-2 col-xs-12">
+
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-12"></div>
+    </div>
+
+    <!--Row for Teams Related Info-->
+    <br />
+    <h4 class="text-primary">Teams in Working</h4><hr />
+    <div class="row">
+        <div class="col-md-12">
+            <!--Accordion wrapper-->
+            <div class="accordion md-accordion" id="accordionEx1" role="tablist" aria-multiselectable="true">
+
+                <!-- Accordion card -->
+                <div class="card">
+                    <!-- Card header -->
+                    <div class="card-header" role="tab" id="headingTwo1">
+                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#collapseTwo1"
+                           aria-expanded="false" aria-controls="collapseTwo1">
+                            @*<h5 class="mb-0">
+            Collapsible Group Item #1 <i class="fas fa-angle-down rotate-icon"></i>
+        </h5>*@
+                            <table class="table text-primary" style="font-size:16px;font-family:DejaVu Sans">
+                                <tr class="row-no-gutters">
+                                    <th>Mindfire DOT NET Team</th>
+                                    <th>192 members</th>
+                                    <th>Created on 24-Jun-2019</th>
+                                    <th>Mo Abjal created</th>
+                                    <th><i class="fas fa-angle-down rotate-icon"></i></th>
+                                </tr>
+                            </table>
+                            
+                        </a>
+                    </div>
+
+                    <!-- Card body -->
+                    <div id="collapseTwo1" class="collapse" role="tabpanel" aria-labelledby="headingTwo1"
+                         data-parent="#accordionEx1">
+                        <div class="card-body">
+                            <!-- Table with panel -->
+                            <div class="card-cascade narrower">
+
+                                <!--Card image-->
+                                @*<div class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+
+                                    <a href="" class="white-text mx-3" align="center">Registered Companies with Arbeit</a>
+                                </div>*@
+                                <div class="blue-gradient white-text" style="font-family:DejaVu Sans;height:50px;">
+                                    <h5 class="text-center" style="font-family:DejaVu Sans;position:relative;top:10px;">All Members in Team</h5>
+                                </div>
+                                <!--/Card image-->
+
+                                <div class="px-4">
+
+                                    <div class="table-wrapper">
+                                        <!--Table-->
+                                        <table class="table table-hover mb-0">
+
+                                            <!--Table head-->
+                                            <thead>
+                                                <tr class="text-success">
+                                                    <th class="th-lg">
+                                                        <a>
+                                                            User Name
+                                                            <i class="fas fa-sort ml-1"></i>
+                                                        </a>
+                                                    </th>
+                                                    <th>
+                                                        <a>
+                                                            Email
+                                                            <i class="fas fa-sort ml-1"></i>
+                                                        </a>
+                                                    </th>
+                                                    <th>
+                                                        <a>
+                                                            Registration Date
+                                                            <i class="fas fa-sort ml-1"></i>
+                                                        </a>
+                                                    </th>
+                                                    <th>
+                                                        <a>
+                                                            Action
+                                                            <i class="fas fa-sort ml-1"></i>
+                                                        </a>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <!--Table head-->
+                                            <!--Table body-->
+                                            <tbody>
+                                                <tr>
+                                                    <th>Dev Bhardwaj</th>
+                                                    <th>devb@mindfiresolutions.com</th>
+                                                    <th>24-Jun-2019</th>
+                                                    <th>
+                                                        <a class="btn btn-success btn-sm" href="@Url.Action("profile","CompanyUser")">
+                                                            Details
+                                                        </a>
+                                                    </th>
+                                                </tr>
+
+
+                                            </tbody>
+                                            <!--Table body-->
+                                        </table>
+                                        <!--Table-->
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- Table with panel -->
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Accordion card -->
+                
+            <!-- Accordion wrapper -->
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+    function up_img() {
+        $(".up_img").css("display", "none");
+        $(".up_form").css("display", "block");
+    }
+
+</script>
