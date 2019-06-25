@@ -13,6 +13,8 @@ namespace Arbeit.Controllers
         {
             return View();
         }
-
+        public String D() {
+            return "ddd";
+        }
     }
 }
