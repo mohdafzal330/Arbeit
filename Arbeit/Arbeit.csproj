@@ -151,6 +151,7 @@
     <Content Include="Views\CompanyAdmin\Index.cshtml" />
     <Content Include="Views\CompanyAdmin\Profile.cshtml" />
     <Content Include="Views\Board\Index.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

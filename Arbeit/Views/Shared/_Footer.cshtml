@@ -2,110 +2,57 @@
 @{
     Layout = null;
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>_Footer</title>
-    <style>
-        h4 {
-            margin-top:5%;
-            font-weight:bold;
-            
-        }
-        .ju {
-            margin-left:5%;
-        }
-        p {
-            font-size:medium;
-            font-weight:bolder;
-        }
-    </style>
-</head>
-<body>
-    <!-- Footer -->
-    <footer class="page-footer font-small bg-primary darken-3">
-
-        <!-- Footer Elements -->
-        <div class="container-fluid">
-            <div class="row ju" style="width:100%">
-                <div class="col-sm-3">
-                    <u><h4 class="text-uppercase" style="font-size:x-large">Arbiet Cops</h4></u>
-                    <p>Ever heard the managment , yes you here we are providing vast varitey of managing ongoing project that delivers real time quick solution for managing the project which makes a project handling more easy as other do.<b>Be diffrent</b> </p>
-                </div>
-                <div class="col-sm-3">
-                    <u><h4 class="text-uppercase"style="font-size:x-large">Developer</h4></u>
-                    <p >Mo abjal</p>
-                    <p>Dev bhardwaj</p>
-                </div>
-                <div class="col-sm-3">
-                    <u><h4 class="text-uppercase"style="font-size:x-large">Useful links</h4></u>
-                    <p><a>Login as Arbiet Admin</a></p>
-                    <p><a>Login as Company Admin</a></p>
-                    <p>@Html.ActionLink("About us", "about", "home")</p>
-                    <p><a>Comunity</a></p>
-                </div>
-                <div class="col-sm-3">
-                    <u><h4 class="text-uppercase"style="font-size:x-large">Contact Us</h4></u>
-                    <p>6th & 7th Floors, Assotech One, </p>
-                    <p>C-20/1/1A, Sector 62</p>
-                    <p>Noida, Uttar Pradesh 201309</p>
-                </div>
-
-
+<!--Footer Content-->
+    <div class="container-fluid blue-gradient white-text">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-12 text-center">
+                <br />
+                <h3 style="text-decoration:underline">
+                    Arbeit Corporation
+                </h3><br />
+                <p style="word-spacing:1px;letter-spacing:2px;text-align:left">
+                    We offer our employees flexible working opportunities in 21 countries worldwide.
+                    This covers more than 90 percent of our workforce across all levels of the hierarchy.
+                    ahead of our international competitors.
+                </p>
 
             </div>
-            </div>
-            <!-- Grid row-->
-            <div class="row">
-
-                <!-- Grid column -->
-                <div class="col-md-12 ">
-                    <div class="mb-5 flex-center">
-
-                        <!-- Facebook -->
-                        <a class="fb-ic">
-                            <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                        </a>
-                        <!-- Twitter -->
-                        <a class="tw-ic">
-                            <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                        </a>
-                        <!-- Google +-->
-                        <a class="gplus-ic">
-                            <i class="fab fa-google-plus-g fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                        </a>
-                        <!--Linkedin -->
-                        <a class="li-ic">
-                            <i class="fab fa-linkedin-in fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                        </a>
-                        <!--Instagram-->
-                        <a class="ins-ic">
-                            <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
-                        </a>
-                        <!--Pinterest-->
-                        <a class="pin-ic">
-                            <i class="fab fa-pinterest fa-lg white-text fa-2x"> </i>
-                        </a>
-                    </div>
-                </div>
-                <!-- Grid column -->
+            <div class="col-md-3 col-sm-3 col-xs-12 text-center">
+                <br />
+                <h3 style="text-decoration:underline">Developers</h3>
+                <br />
+                <a>
+                    Mo Abjal
+                </a><br /><br />
+                <a>
+                    Dev Bhardwaj
+                </a><br />
 
             </div>
-            <!-- Grid row-->
+            <div class="col-md-3 col-sm-3 col-xs-12 text-center">
+                <br />
+                <h3 style="text-decoration:underline">Usefull Links</h3>
+                <br />
+                <a href="" class="white-text">About Us</a><br /><br />
+                <a href="" class="white-text">Contact Us</a><br /><br />
+                <a href="" class="white-text">Read More About Arbeit</a><br /><br />
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-12 text-center">
+                <br />
+                <h3 style="text-decoration:underline">Reach Us</h3>
+                <br />
+                <p>
+                    Mindfire Solutions<br />
+                    6th & 7th Floor, Asotech One<br />
 
+                </p>
+            </div>
         </div>
-        <!-- Footer Elements -->
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">
-            &copy;@DateTime.Now.Year
-            @Html.ActionLink("Arbiet.com","index","home")
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                <h6>
+                @DateTime.Now.Year &copy; @Html.ActionLink("Arbit.Com", "index", "home", new { style="color:white" }) Reserved All Rights
+                </h6>
+            </div>
         </div>
-        <!-- Copyright -->
-
-    </footer>
-    <!-- Footer -->
-</body>
-</html>
+    </div>
