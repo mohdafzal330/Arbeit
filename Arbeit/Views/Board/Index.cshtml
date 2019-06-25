@@ -1,0 +1,626 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    .card-title {
+        margin: 3%;
+    }
+
+    .inner-card:hover {
+        transition-duration: 0.6s;
+        transform: scale(1.1);
+    }
+
+    .card-description {
+        margin: 0%;
+        font-size: 12px;
+        color: grey;
+    }
+
+    .comment {
+        margin-left: 8%;
+        margin-right: 20%;
+    }
+
+    .attachment {
+        margin-right: 15%;
+    }
+
+    .inner-row {
+        margin: 2%;
+    }
+
+    .inner-card-dropdown {
+        border: none;
+        display: inline-block;
+        background-color: inherit;
+    }
+
+    .inner-card {
+        margin-bottom: 4%;
+    }
+
+    .top {
+        margin: 2%;
+        font-size: 20px;
+    }
+
+    .side {
+        width: 110%;
+    }
+
+    .ticket {
+        margin: 2%;
+    }
+
+    .md-progress {
+        height: 5px;
+    }
+
+    .progress-bar {
+        background-color: green;
+    }
+
+    .reason {
+        font-size: small;
+        color: gray;
+    }
+
+    .duration {
+        font-size: small;
+        color: gray;
+    }
+
+    .note-discription {
+        font-size: small;
+        color: grey;
+    }
+
+    .comments-date {
+        font-size: 10px;
+        color: grey;
+    }
+
+    .comments-user {
+        font-size: 12px;
+        color: black;
+    }
+
+    .comments-text {
+        font-size: 12px;
+        color: grey;
+        margin-left: 2%;
+    }
+
+    .comments {
+        margin: 2%;
+    }
+
+    .card-header {
+        background-color: white;
+    }
+
+    .btn-group .dropright {
+        width: 110%;
+    }
+
+    .vla {
+        width: 110%;
+    }
+
+    .drop {
+        padding: 2%;
+    }
+
+    .dropdown-item {
+        font-size: small
+    }
+
+        .dropdown-item:hover {
+            background-color: dodgerblue;
+            color: white;
+        }
+</style>
+<script>
+    function changeimp() {
+        if (document.getElementById('star').className === "far fa-star fa-clickable")
+            document.getElementById('star').className = "fas fa-star fa-clickable";
+        else
+            document.getElementById('star').className = "far fa-star fa-clickable";
+    }
+    function changetype() {
+        if (document.getElementById('type').className === "fas fa-lock") {
+            document.getElementById('type').className = "fas fa-lock-open";
+            document.getElementById('text').innerHTML = "Public";
+        }
+        else {
+            document.getElementById('type').className = "fas fa-lock";
+            document.getElementById('text').innerHTML = "Private";
+        }
+
+    }
+    function changeArrow() {
+        var value = document.getElementById('arrow');
+        if (value.className === "fa fa-arrow-circle-down") {
+            value.className = "fa fa-arrow-circle-up";
+        }
+        else {
+            value.className = "fa fa-arrow-circle-down";
+        }
+    }
+    function changeArrow2() {
+        var value = document.getElementById('down');
+        if (value.className === "fa fa-plus") {
+            value.className = "fa fa-minus";
+        }
+        else {
+            value.className = "fa fa-plus";
+        }
+    }
+    function changeArrow3() {
+        var value = document.getElementById('downlist');
+        if (value.className === "fa fa-plus") {
+            value.className = "fa fa-minus";
+        }
+        else {
+            value.className = "fa fa-plus";
+        }
+    }
+    function ValidateText() {
+        var value = document.getElementById('CommentArea').value;
+        var msg = "not working";
+        if (value === "")
+            msg = "Comment cannot be blank";
+        else {
+            msg = "Successfully added your comment";
+            document.getElementById('CommentArea').value = "";
+        }
+        alert(msg);
+    }
+</script>
+<div class="container-fluid" style="background-image:url(../../Content/img/board-image.jpg);color:white;height:100%">
+    <div class="project">
+        <div class="row">
+            <div class="col-sm-2 top">
+                <div class="project-title font-weight-bold">Mindfire Project</div>
+            </div>
+            <div class="col-sm-1 top">
+                <div class="project-importance"><a onclick="changeimp()"><i class="far fa-star" id="star" style="color:#FF5733"></i></a></div>
+            </div>
+            <div class="col-sm-2 top text-left">
+                <div class="project-type"><a onclick="changetype()"><i class="fas fa-lock" style="color:#FF5733;" id="type"></i><span id="text" style="margin-left:5%;">Private</span></a></div>
+            </div>
+            <div class="col-sm-4 top text-left">
+                <div class="project-team">
+                    <span class="badge badge-pill light-blue">DS</span>
+                    <span class="badge badge-pill purple">RS</span>
+                    <span class="badge badge-pill light-blue">MO</span>
+                    <span class="badge badge-pill pink">JU</span>
+                    <a data-toggle="modal" data-target="#InviteForm"><span class="badge badge-pill badge-success" id="" onclick="" style="margin-left:3%"><i class="fas fa-plus" aria-hidden="true"></i><b style="margin-left:10%">Invite</b></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="board" style="margin:5%;color:black">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card" style="background-color:#E2DFEA">
+                    <div class="card-title font-weight-bold row" style="font-size:20px">To do</div>
+                    <div class="container">
+                        <a onclick="" data-toggle="modal" data-target="#modalRegisterForm">
+                            <div class="card inner-card" draggable="false">
+                                <div class="card-title row" style="font-size:15px">
+                                    <div class="col-sm-6">
+                                        1. Start project
+                                    </div>
+                                </div>
+                                <div class="card-description">
+                                    <div class="row inner-row">
+                                        <div class="comment">
+                                            <span><i class="far fa-comments"></i></span>
+                                            <span>23</span>
+                                        </div>
+                                        <div class="attachment">
+                                            <span><i class="far fa-images"></i></span>
+                                            <span>3</span>
+                                        </div>
+                                        <div class="attachment">
+                                            <span><i class="far fa-check-square"></i></span>
+                                            <span>3/23</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="container mb-2">
+                        <div class="accordion md-accordion" id="accordionEx3" role="tablist" aria-multiselectable="true">
+                            <div class="card-header" role="tab">
+                                <div class="row">
+                                    <div class="col-sm-6 text-center" style="margin-left:-5%;">
+                                        Add new card
+                                    </div>
+                                    <div class="col-sm-6 text-right">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx3" href="#AddCardCollapse" aria-expanded="false" aria-controls="AddCardCollapse">
+                                            <h5 class="mb-0">
+                                                <span class="badge badge-pill light-blue" onclick="changeArrow2()"><i id="down" class="fa fa-plus"></i></span>
+                                            </h5>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="AddCardCollapse" class="collapse" role="tabpanel" aria-labelledby="" data-parent="#accordionEx3">
+                                <div class="container card mb-2">
+                                    <label for="CardTitle">Enter Card title</label>
+                                    <input type="text" class="form-control" id="CardTitle" />
+                                    <button class="btn btn-success">Add now</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="background-color:#E2DFEA">
+                    <div class="accordion md-accordion" id="accordionEx4" role="tablist" aria-multiselectable="true">
+                        <div class="card-header" role="tab">
+                            <div class="row">
+                                <div class="col-sm-6 text-center font-weight-bold" style="margin-left:-5%;font-size:20px">
+                                    Add new List
+                                </div>
+                                <div class="col-sm-6 text-right">
+                                    <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx4" href="#AddListCollapse" aria-expanded="false" aria-controls="AddListCollapse">
+                                        <h5 class="mb-0">
+                                            <span class="badge badge-pill light-blue" onclick="changeArrow3()"><i id="downlist" class="fa fa-plus"></i></span>
+                                        </h5>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="AddListCollapse" class="collapse" role="tabpanel" aria-labelledby="" data-parent="#accordionEx4">
+                            <div class="container card mb-2">
+                                <label for="CardTitle">Enter List title</label>
+                                <input type="text" class="form-control" id="ListTitle" />
+                                <button class="btn btn-success">Add now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!--Modal form for inner card-->
+
+<form>
+    <div class="modal fade" id="modalRegisterForm" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">To Do</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="row">
+                        <div class="col-sm-6">Memebers</div>
+                        <div class="col-sm-6 text-right">Due Date</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <span class="badge badge-pill light-blue">DS</span>
+                            <span class="badge badge-pill purple">RS</span>
+                        </div>
+                        <div class="col-sm-6  text-right">
+                            <span class="badge badge-pill pink">12 JUL 19</span>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-sm-8">
+                           @using (Html.BeginForm()){
+                            <div class="md-form">
+                                <textarea id="materialContactFormMessage" class="form-control md-textarea" rows="1"></textarea>
+                                <label for="materialContactFormMessage">Description</label>
+                            </div>
+                            <button class="btn btn-success" type="submit" id="1">Save</button>
+                            }
+                        </div>
+                        <div class="col-sm-4 text-right" style="transform:scale(0.9);">
+                            <div class="btn-group dropright mb-2 vla">
+                                <button type="button" class="btn badge badge light-blue side" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Members</button>
+                                <div class="dropdown-menu">
+                                    <div class="dropdown-header">Are</div>
+                                    <a class="dropdown-item" href="#">
+                                        <div class="row drop">
+                                            <div class="col-sm-6 text-left">&#64;Rajesh12</div>
+                                            <div class="col-sm-6 text-right"><i class="" style="color:blue"></i></div>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <div class="row drop">
+                                            <div class="col-sm-6 text-left">&#64;Reema3</div>
+                                            <div class="col-sm-6 text-right"><i class="fa fa-check-circle" style="color:blue"></i></div>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <div class="row drop">
+                                            <div class="col-sm-6 text-left">&#64;Devae34</div>
+                                            <div class="col-sm-6 text-right"><i class="fa fa-check-circle" style="color:blue"></i></div>
+                                        </div>
+                                    </a>
+
+                                </div>
+                            </div>
+                            <button class="btn badge badge light-blue side mb-2" style="margin-left:-1%" type="button" data-toggle="modal" data-target="#TicketForm">Tickets</button>
+                            <div class="btn-group dropright mb-2 vla">
+                                <button type="button" class="btn badge badge light-blue side" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Move</button>
+                                <div class="dropdown-menu">
+                                    <div class="dropdown-header">To</div>
+                                    <a class="dropdown-item" href="#">
+                                        <div class="row drop">
+                                            <div class="col-sm-6 text-left">#Todo</div>
+                                            <div class="col-sm-6 text-right"><i class="fa fa-star-of-life" style="color:blue"></i></div>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <div class="row drop">
+                                            <div class="col-sm-6 text-left">#Doing</div>
+                                            <div class="col-sm-6 text-right"><i class="" style="color:blue"></i></div>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item" href="#">
+                                        <div class="row drop">
+                                            <div class="col-sm-6 text-left">#Done</div>
+                                            <div class="col-sm-6 text-right"><i class="" style="color:blue"></i></div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="title">Available Tickets</div><br />
+                            <div class="row">
+                                <div class="col-sm-1" style="margin-top:-1.2%;font-size:12px">
+                                    50%
+                                </div>
+                                <div class="col-sm-11">
+                                    <div class="progress md-progress">
+                                        <div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div><br>
+                            <div class="accordion md-accordion" id="accordionEx1" role="tablist" aria-multiselectable="true">
+                                <div class="card">
+
+                                    <!-- Card header -->
+                                    <div class="card-header" role="tab">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="ticket_1">
+                                                    <label class="custom-control-label" for="ticket_1">Collect Info</label>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-sm-6 text-right">
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx1" href="#ticketCollapse" aria-expanded="false" aria-controls="ticketCollapse">
+                                                    <h5 class="mb-0">
+                                                        <span class="badge badge-pill light-blue">14 JUN 19</span>
+                                                    </h5>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Card body -->
+                                    <div id="ticketCollapse" class="collapse" role="tabpanel" aria-labelledby="" data-parent="#accordionEx1">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-6">Reason</div>
+                                                <div class="col-sm-6 text-right">Duration</div>
+                                            </div>
+                                            <div class="row mb-2">
+                                                <div class="col-sm-6 reason">Reason explaination likha hoga</div>
+                                                <div class="col-sm-6 text-right duration">12hrs</div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">Note</div>
+                                            </div>
+                                            <div class="row mb-2">
+                                                <div class="col note-discription">
+                                                    note ki discription ayi gy isme sab kuch likha hoga as
+                                                </div>
+                                            </div>
+                                            <div class="accordion md-accordion" id="accordionEx2" role="tablist" aria-multiselectable="true">
+                                                <div class="card-header" role="tab">
+                                                    <div class="row">
+                                                        <div class="col-sm-6" style="margin-left:-5%;">
+                                                            Comments
+                                                        </div>
+                                                        <div class="col-sm-6 text-right">
+                                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx2" href="#CommentCollapse" aria-expanded="false" aria-controls="CommentCollapse">
+                                                                <h5 class="mb-0">
+                                                                    <span class="badge badge-pill light-blue" onclick="changeArrow()"><i id="arrow" class="fa fa-arrow-circle-down"></i></span>
+                                                                </h5>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="CommentCollapse" class="collapse" role="tabpanel" aria-labelledby="" data-parent="#accordionEx2">
+                                                    <div class="card comments mb-2">
+                                                        <div class="card-title">
+                                                            <div class="row">
+                                                                <div class="col-sm-6 comments-user">&#64;Jatin</div>
+                                                                <div class="col-sm-6 text-right comments-date">12 JUN 19</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body comments-text">
+                                                            comment yaha aeyga dekh lio
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-9">
+                                                    <!-- Material Input -->
+                                                    <div class="md-form">
+                                                        <input type="text" id="CommentArea" class="form-control" style="font-size:small">
+                                                        <label for="CommentArea" style="font-size:small">Add your comment here</label>
+                                                    </div>
+                                                    <!-- Material Input--->
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <button class="btn badge badge-pill light-blue" type="button" style="width:60%;top:15%;" data-toggle="tooltip" title="add your comment" onclick="ValidateText()"><i class="fa fa-paper-plane" style="color:white"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="accordion md-accordion" id="accordionEx5" role="tablist" aria-multiselectable="true">
+                                                <div class="card-header" role="tab">
+                                                    <div class="row">
+                                                        <div class="col-sm-6" style="margin-left:-5%;">
+                                                            Attachment
+                                                        </div>
+                                                        <div class="col-sm-6 text-right">
+                                                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx2" href="#AttachmentCollapse" aria-expanded="false" aria-controls="AttachmentCollapse">
+                                                                <h5 class="mb-0">
+                                                                    <span class="badge badge-pill light-blue" onclick="changeArrow()"><i id="arrow" class="fa fa-arrow-circle-down"></i></span>
+                                                                </h5>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div id="AttachmentCollapse" class="collapse" role="tabpanel" aria-labelledby="" data-parent="#accordionEx5">
+                                                    <div class="card comments mb-2">
+                                                        <div class="card-title">
+                                                            <div class="row">
+                                                                <div class="col-sm-6 comments-user">&#64;Jatin</div>
+                                                                <div class="col-sm-6 text-right comments-date">12 JUN 19</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-body comments-text">
+                                                            comment yaha aeyga dekh lio
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-9">
+                                                    <!-- Material Input -->
+                                                    <div class="md-form">
+                                                        <div class="custom-file" style="font-size:12px">
+                                                            <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Material Input--->
+                                                </div>
+                                                <div class="col-sm-3">
+                                                    <button class="btn badge badge-pill light-blue" type="button" style="width:60%;top:30%;" data-toggle="tooltip" title="add your comment" onclick="ValidateText()"><i class="fa fa-paper-plane" style="color:white"></i></button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!--Modal form for inner card-->
+<!-- Modal form for ticket -->
+<form>
+    <div class="modal fade" id="TicketForm" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Add Ticket</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="md-form">
+                                <i class="fa fa-heading prefix"></i>
+                                <input type="text" id="Title" maxlength="12" class="form-control" placeholder="" data-toggle="tooltip" title="Title of ticket">
+                                <label for="Title" class="">Ticket's Title *</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 text-right">
+                            <div class="md-form">
+                                <input type="text" id="Duration" maxlength="2" class="form-control" placeholder="" data-toggle="tooltip" title="Total time invlove inticket preparation">
+                                <label for="Duration" class="">Ticket's Duration (in mins) *</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="md-form">
+                                <i class="fas fa-book-reader prefix"></i>
+                                <textarea class="form-control md-textarea" id="Descriton" rows="1" data-toggle="tooltip" title="Description of ticket"></textarea>
+                                <label for="Discription" class="">Ticket's Description *</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="md-form">
+                                <i class="fas fa-sticky-note prefix"></i>
+                                <textarea class="form-control md-textarea" id="Note" rows="1"></textarea>
+                                <label for="Note" class="">Ticket's Note (Optional)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-deep-orange">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- Modal form for ticket -->
+<!-- MOdal form for invite members -->
+
+<div class="modal fade" id="InviteForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Invite Members</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <form class="form-inline md-form form-sm mt-0">
+                    <i class="fas fa-search" aria-hidden="true"></i>
+                    <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search"
+                           aria-label="Search">
+                    <button class="btn btn-info ">Add members</button>
+                </form>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+
+<!-- MOdal form for invite members -->

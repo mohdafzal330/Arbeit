@@ -94,6 +94,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\img\back.png" />
     <Content Include="Content\img\backg.jpg" />
+    <Content Include="Content\img\board-image.jpg" />
     <Content Include="Content\img\com.jpg" />
     <Content Include="Content\img\pro.png" />
     <Content Include="Content\Site.css" />
@@ -115,6 +116,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ArbeitController.cs" />
     <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\BoardController.cs" />
     <Compile Include="Controllers\CompaniesController.cs" />
     <Compile Include="Controllers\CompanyAdminController.cs" />
     <Compile Include="Controllers\CompanyUserController.cs" />
@@ -148,6 +150,7 @@
     <Content Include="Views\CompanyUser\Profile.cshtml" />
     <Content Include="Views\CompanyAdmin\Index.cshtml" />
     <Content Include="Views\CompanyAdmin\Profile.cshtml" />
+    <Content Include="Views\Board\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
