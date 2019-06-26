@@ -13,12 +13,9 @@ namespace Arbeit.Controllers
         {
             return View();
         }
-<<<<<<< HEAD
 
-=======
         public String D() {
             return "ddd";
         }
->>>>>>> 7f2922040d9addf4579a6b5193ca530bd5116d43
-    }
+   }
 }
